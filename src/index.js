@@ -42,7 +42,7 @@ setInterval(function(){
   if (i%2==0) {
     pixelData[i] = color;
     ws281x.render(pixelData);
-    console.log('on', i);
+    console.log('on', pixelData);
   }else {
     blackout();
     console.log('off', i);
