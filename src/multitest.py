@@ -69,11 +69,12 @@ if __name__ == '__main__':
 
         while True:
                 # rotate
-                time.sleep(1000/1000.0)
+
                 for i in range(strip1.numPixels()):
                     blackout(strip1)
                     strip1.setPixelColor(i, Color(0, 255, 0))
                     strip1.show()
+                    time.sleep(1000/1000.0)
 
                 # Multi Color wipe animations.
                 #multiColorWipe(Color(255, 0, 0), Color(255, 0, 0))  # Red wipe
