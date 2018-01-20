@@ -1,6 +1,6 @@
 var ws281x = require('rpi-ws281x-native');
 
-var NUM_LEDS = 60,
+var NUM_LEDS = 10,
         pixelData = new Uint32Array(NUM_LEDS);
 
 ws281x.init(NUM_LEDS);
@@ -30,9 +30,7 @@ setInterval(function () {
   ws281x.render(pixelData);
   pixel++
   if(pixel > NUM_LEDS){
-    pixel = 0;
-    blackout();
-    ws281x.render(pixelData);
+    process.exit(0);
   }
 }, 1000);
 
