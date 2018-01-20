@@ -15,6 +15,14 @@ function rgb2Int(r, g, b) {
   return ((r & 0xff) << 16) + ((g & 0xff) << 8) + (b & 0xff);
 }
 
+function blackout(){
+  for (var i = 0; i < NUM_LEDS; i++) {
+    pixelData[i] = rgb2Int(0,0,0);
+  }
+}
+
+blackout();
+
 // ---- animation-loop
 pixel = 1;
 setInterval(function () {
@@ -23,9 +31,7 @@ setInterval(function () {
   pixel++
   if(pixel > NUM_LEDS){
     pixel = 0;
-    for (let i = 0; i < NUM_LEDS; i++) {
-      pixelData[i] = rgb2Int(0,0,0);
-    }
+    blackout();
     ws281x.render(pixelData);
   }
 }, 1000);
