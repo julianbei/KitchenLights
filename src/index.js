@@ -24,15 +24,17 @@ function blackout(){
 blackout();
 
 // ---- animation-loop
-pixel = 1;
+pixel = 0;
+var color = rgb2Int(50, 205, 50);
+console.log('color: '+color, color);
 setInterval(function () {
-  pixelData[pixel] = rgb2Int(50, 205, 50);
+  pixelData[pixel] = color;
   ws281x.render(pixelData);
   pixel++
   if(pixel > NUM_LEDS){
     process.exit(0);
   }
   console.log(pixelData);
-}, 1000);
+}, 2000);
 
 console.log('Press <ctrl>+C to exit.');
