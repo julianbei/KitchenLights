@@ -26,6 +26,7 @@ blackout();
 // ---- animation-loop
 pixel = 0;
 var color = rgb2Int(50, 205, 50);
+color = 0x32CD32;
 console.log('color: '+color, color);
 setInterval(function () {
   pixelData[pixel] = color;
