@@ -47,6 +47,7 @@ setInterval(function(){
     blackout();
     console.log('off', i);
   }
+  i++;
 }, 1000);
 
 console.log('Press <ctrl>+C to exit.');
