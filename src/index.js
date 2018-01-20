@@ -40,10 +40,12 @@ console.log('color: '+color, color);
 var i = 0;
 setInterval(function(){
   if (i%2==0) {
-    pixelData[pixel] = color;
+    pixelData[i] = color;
     ws281x.render(pixelData);
+    console.log('on', i);
   }else {
     blackout();
+    console.log('off', i);
   }
 }, 1000);
 
