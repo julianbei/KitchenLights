@@ -32,6 +32,7 @@ setInterval(function () {
   if(pixel > NUM_LEDS){
     process.exit(0);
   }
+  console.log(pixelData);
 }, 1000);
 
 console.log('Press <ctrl>+C to exit.');
