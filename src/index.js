@@ -1,6 +1,6 @@
 var ws281x = require('rpi-ws281x-native');
 
-var NUM_LEDS = 10,
+var NUM_LEDS = 65,
         pixelData = new Uint32Array(NUM_LEDS);
 
 ws281x.init(NUM_LEDS);
@@ -28,14 +28,23 @@ pixel = 0;
 var color = rgb2Int(50, 205, 50);
 color = 0x32CD32;
 console.log('color: '+color, color);
-setInterval(function () {
-  pixelData[pixel] = color;
-  ws281x.render(pixelData);
-  pixel++
-  if(pixel > NUM_LEDS){
-    process.exit(0);
+// setInterval(function () {
+//   pixelData[pixel] = color;
+//   ws281x.render(pixelData);
+//   pixel++
+//   if(pixel > NUM_LEDS){
+//     process.exit(0);
+//   }
+//   console.log(pixelData);
+// }, 2000);
+var i = 0;
+setInterval(function(){
+  if (i%2==0) {
+    pixelData[pixel] = color;
+    ws281x.render(pixelData);
+  }else {
+    blackout();
   }
-  console.log(pixelData);
-}, 2000);
+}, 1000);
 
 console.log('Press <ctrl>+C to exit.');
