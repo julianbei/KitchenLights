@@ -68,11 +68,17 @@ if __name__ == '__main__':
         blackout(strip2)
 
         while True:
+                # rotate
+                time.sleep(1000/1000.0)
+                for i in range(strip1.numPixels()):
+                    blackout(strip1)
+                    strip1.setPixelColor(i, Color(0, 255, 0))
+                    strip1.show()
 
                 # Multi Color wipe animations.
-                multiColorWipe(Color(255, 0, 0), Color(255, 0, 0))  # Red wipe
-                multiColorWipe(Color(0, 255, 0), Color(0, 255, 0))  # Blue wipe
-                multiColorWipe(Color(0, 0, 255), Color(0, 0, 255))  # Green wipe
-                multiColorWipe(Color(255, 255, 255), Color(255, 255, 255))  # Composite White wipe
-                multiColorWipe(Color(0, 0, 0, 255), Color(0, 0, 0))  # White wipe
-                multiColorWipe(Color(255, 255, 255, 255), Color(0, 0, 0))  # Composite White + White LED wipe
+                #multiColorWipe(Color(255, 0, 0), Color(255, 0, 0))  # Red wipe
+                #multiColorWipe(Color(0, 255, 0), Color(0, 255, 0))  # Blue wipe
+                #multiColorWipe(Color(0, 0, 255), Color(0, 0, 255))  # Green wipe
+                #multiColorWipe(Color(255, 255, 255), Color(255, 255, 255))  # Composite White wipe
+                #multiColorWipe(Color(0, 0, 0, 255), Color(0, 0, 0))  # White wipe
+                #multiColorWipe(Color(255, 255, 255, 255), Color(0, 0, 0))  # Composite White + White LED wipe
