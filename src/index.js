@@ -16,13 +16,18 @@ function rgb2Int(r, g, b) {
 }
 
 // ---- animation-loop
-var offset = 0;
+pixel = 1;
 setInterval(function () {
-  for (var i = 0; i < NUM_LEDS; i++) {
-    pixelData[i] = rgb2Int(offset, offset, offset);
-  }
-  offset += 10;
+  pixelData[pixel] = rgb2Int(0, 150, 150);
   ws281x.render(pixelData);
+  pixel++
+  if(pixel > NUM_LEDS){
+    pixel = 0;
+    for (let i = 0; i < NUM_LEDS; i++) {
+      pixelData[i] = rgb2Int(0,0,0);
+    }
+    ws281x.render(pixelData);
+  }
 }, 1000);
 
 console.log('Press <ctrl>+C to exit.');
