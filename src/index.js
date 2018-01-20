@@ -26,7 +26,7 @@ blackout();
 // ---- animation-loop
 pixel = 1;
 setInterval(function () {
-  pixelData[pixel] = rgb2Int(0, 150, 150);
+  pixelData[pixel] = rgb2Int(50, 205, 50);
   ws281x.render(pixelData);
   pixel++
   if(pixel > NUM_LEDS){
